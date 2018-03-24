@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController">
+            <connections>
+                <outlet property="txtField" destination="WjD-FM-8yl" id="mNc-sw-aoe"/>
+                <outlet property="view" destination="iN0-l3-epB" id="g2z-KF-8fY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WjD-FM-8yl">
+                    <rect key="frame" x="15" y="308.5" width="345" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="QhU-Qn-pLS"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8W-it-WXT">
+                    <rect key="frame" x="112.5" y="373.5" width="150" height="50"/>
+                    <color key="backgroundColor" red="0.91147831909999999" green="1" blue="0.54724784640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="bC8-xW-FmG"/>
+                        <constraint firstAttribute="width" constant="150" id="fez-z5-Daa"/>
+                    </constraints>
+                    <state key="normal" title="完成"/>
+                    <connections>
+                        <action selector="completeBtnClick:" destination="-1" eventType="touchUpInside" id="UxR-J7-XQu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="g8W-it-WXT" firstAttribute="top" secondItem="WjD-FM-8yl" secondAttribute="bottom" constant="15" id="453-iG-MOT"/>
+                <constraint firstAttribute="trailing" secondItem="WjD-FM-8yl" secondAttribute="trailing" constant="15" id="CcW-Ls-Wqc"/>
+                <constraint firstItem="g8W-it-WXT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cs1-yV-4z5"/>
+                <constraint firstItem="WjD-FM-8yl" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="J1L-Ud-skI"/>
+                <constraint firstItem="WjD-FM-8yl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="NmT-u6-LKm"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
