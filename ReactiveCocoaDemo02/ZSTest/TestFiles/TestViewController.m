@@ -29,6 +29,7 @@
     
     self.logInFailureLabel.hidden = YES;
     
+    
     //第一步：创建表示用户名和密码有效的信号
     RACSignal *validUserNameSignal = [self.userNameTxtField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
         return @([self isValidForUserName:value]);

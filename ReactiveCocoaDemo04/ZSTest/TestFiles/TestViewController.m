@@ -28,22 +28,22 @@
     self.title = @"RACDemo06";
     
     //1.代替代理
-    [self signalTest1];
+    //[self signalTest1];
     
     //2/代替按钮等控制视图的响应事件
-    [self signalTest2];
+    //[self signalTest2];
     
     //3.代替KVO，监听对象属性变化
-    [self signalTest3];
+    //[self signalTest3];
     
     //4.监听文本输入变化
-    [self signalTest4];
+    //[self signalTest4];
     
     //5.代替通知的使用
-    [self signalTest5];
+    //[self signalTest5];
     
     //6.多请求汇总处理
-    [self signalTest6];
+    //[self signalTest6];
 
  }
 

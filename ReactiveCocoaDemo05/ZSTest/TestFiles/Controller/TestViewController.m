@@ -64,6 +64,7 @@
         //执行登录的网路请求操作
         [weakSelf.loginViewModel.loginCommand execute:nil];
     }];
+    
 }
 
 
