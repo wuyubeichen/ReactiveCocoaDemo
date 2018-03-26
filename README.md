@@ -14,7 +14,7 @@ ReactativeCocoaDemo文件说明：
 3. 学习RAC信号的基本用法：映射、过滤、延时等。
 
 #### Demo04:
-学习RAC对OC中各种响应方法的替换
+测试RAC对OC中各种响应方法的替换
 
 #### Demo05:
 模拟APP开发的真实场景，结合RAC与MVVM实现APP的登录界面和表视图刷新界面

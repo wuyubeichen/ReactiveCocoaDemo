@@ -14,4 +14,6 @@
 @property (nonatomic, strong) VideoListModel *videoListModel;
 
 
++ (VideoListTableViewCell *)getVideoListTableViewCell;
+
 @end

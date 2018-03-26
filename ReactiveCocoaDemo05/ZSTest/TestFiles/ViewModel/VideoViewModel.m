@@ -11,13 +11,15 @@
 @interface VideoViewModel()
 //数据源
 @property(nonatomic,strong)NSMutableArray *videoModels;
-@property(nonatomic,strong)NSNumber *currentPage;
+@property(nonatomic,assign)NSInteger currentPage;
+
 @end
 
 @implementation VideoViewModel
-
+#pragma mark - Life Cycle
 - (id) init{
     if (self = [super init]) {
+        _currentPage = 0;
         [self setupBind];
     }
     return self;
@@ -25,19 +27,46 @@
 
 #pragma mark - private Methods
 - (void)setupBind{
-    
-    //3.RACCommand事件
+    //RACCommand事件
     WS(weakSelf);
-    //封装登录网络请求操作
+    //封装网络请求的操作
     _requestVideoListCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            //使用延时操作，模拟登录网络请求,并在这里发送消息
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2)*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                //发送登录请求的数据
-                [subscriber sendNext:nil];
+            //请求分页的视频列表数据
+            NSDictionary *inputData = (NSDictionary *)input;
+            BOOL headerRefresh = [inputData[@"headerRefresh"] boolValue];
+            NSInteger requestPage = headerRefresh ? 0 : weakSelf.currentPage + 1;
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            NSString *paramPage = [NSString stringWithFormat:@"%ld",requestPage];
+            [params setObject:paramPage forKey:@"page"];
+
+            //执行网络请求
+            [HttpRequestManager requestForVideoList:params response:^(BOOL success, id data) {
+                if(success){
+                    VideoListDataModel *videoListDataModel = [VideoListDataModel yy_modelWithJSON:data];
+                    if(videoListDataModel.videos.count >0){
+                        if(requestPage == 0){
+                            weakSelf.currentPage = 0;
+                            [weakSelf.videoModels removeAllObjects];
+                        }else{
+                            weakSelf.currentPage = requestPage;
+                        }
+                        [weakSelf.videoModels addObjectsFromArray:videoListDataModel.videos];
+                    }else{
+                        //NSLog(@"");
+                    }
+                }else{
+                }
+                //显示提示信息
+                NSString *errorMsg = data[@"errorMsg"];
+                if(errorMsg.length > 0){
+                    [ZSCommonTools showInView:weakSelf.currentVC.view withText:errorMsg];
+                }
+                //发送请求的数据
+                [subscriber sendNext:data];
                 //必须sendCompleted，否则命令永远处于执行状态
                 [subscriber sendCompleted];
-            });
+            }];
             return nil;
         }];
     }];
@@ -45,18 +74,7 @@
     //监听登录操作产生的数据
     //switchToLatest获取最新发送的信号，只能用于信号中信号
     [_requestVideoListCommand.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
-        NSDictionary *data = (NSDictionary *)x;
-        if ([data[@"status"] isEqualToString:@"0"]) {
-            VideoListDataModel *videoListDataModel = [VideoListDataModel yy_modelWithJSON:data[@"archive"]];
-            if ([weakSelf.currentPage integerValue] == 0) {
-                [weakSelf.videoModels removeAllObjects];
-                [weakSelf.videoModels addObject:videoListDataModel.archive];
-            }else{
-                
-            }
-            
-        }
-
+        [[NSNotificationCenter defaultCenter] postNotificationName: NotificationName_RefreshMainVC object:x];
     }];
     
     //监听登录操作的状态：正在进行或者已经结束
@@ -68,8 +86,6 @@
             //正在执行或者没有执行，隐藏MBProgressHUD
         }
     }];
-
-    
 }
 
 
@@ -87,19 +103,24 @@
     NSString *identifier = @"VideoListTableViewCellID";
      VideoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[VideoListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [VideoListTableViewCell getVideoListTableViewCell];
     }
     cell.videoListModel = self.videoModels[indexPath.row];
     return cell;
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+#pragma mark - Getter && Setter
+- (NSMutableArray *)videoModels{
+    if (!_videoModels) {
+        _videoModels = [NSMutableArray array];
+    }
+    return _videoModels;
 }
 
 @end

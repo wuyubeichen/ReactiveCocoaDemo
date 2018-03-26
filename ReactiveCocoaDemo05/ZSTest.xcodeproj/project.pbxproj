@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C79A32F1949054E1B4256ACA /* Pods_ZSTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C51A06597E1C66A825489C /* Pods_ZSTest.framework */; };
+		E90626AC2068CF80000E1F9F /* HttpRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E90626AB2068CF80000E1F9F /* HttpRequestManager.m */; };
 		E9335C9F1C8FCCE100B4F3D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9335C9E1C8FCCE100B4F3D3 /* main.m */; };
 		E9335CA81C8FCCE100B4F3D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9335CA61C8FCCE100B4F3D3 /* Main.storyboard */; };
 		E9335CAD1C8FCCE100B4F3D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9335CAB1C8FCCE100B4F3D3 /* LaunchScreen.storyboard */; };
@@ -19,12 +20,15 @@
 		E9335CE41C8FCF0400B4F3D3 /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9335CE21C8FCF0400B4F3D3 /* TestViewController.xib */; };
 		E952AD241F95BCCA00D8B3BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E952AD221F95BCC900D8B3BF /* AppDelegate.m */; };
 		E952AD291F95BE3000D8B3BF /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E952AD281F95BE3000D8B3BF /* image.xcassets */; };
-		E952AD2B1F95BEB800D8B3BF /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = E952AD2A1F95BEB800D8B3BF /* TestData.json */; };
 		E95DE5EB2066536B00D244DC /* VideoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E95DE5EA2066536B00D244DC /* VideoViewModel.m */; };
 		E95DE5EE2066551400D244DC /* VideoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E95DE5ED2066551300D244DC /* VideoListModel.m */; };
 		E95DE5F22066552800D244DC /* VideoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95DE5F02066552800D244DC /* VideoListTableViewCell.m */; };
 		E95DE5F32066552800D244DC /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95DE5F12066552800D244DC /* VideoListTableViewCell.xib */; };
-		E9DD19942060AC2300135AFE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9DD19932060AC2300135AFE /* MainViewController.xib */; };
+		E9A02A142068E59500542E67 /* ZSCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A02A132068E59500542E67 /* ZSCommonTools.m */; };
+		E9A02A182068E71E00542E67 /* VideoList2.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A02A152068E71D00542E67 /* VideoList2.json */; };
+		E9A02A192068E71E00542E67 /* VideoList3.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A02A162068E71E00542E67 /* VideoList3.json */; };
+		E9A02A1A2068E71E00542E67 /* VideoList1.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A02A172068E71E00542E67 /* VideoList1.json */; };
+		E9A02A1C2068F5FC00542E67 /* VideoList0.json in Resources */ = {isa = PBXBuildFile; fileRef = E9A02A1B2068F5FC00542E67 /* VideoList0.json */; };
 		E9F54C061D5AF3BE00EBD9A7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F54C051D5AF3BE00EBD9A7 /* MainViewController.m */; };
 		E9F55F82206357EE006456D1 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F55F81206357EE006456D1 /* AccountModel.m */; };
 		E9F55F8520635808006456D1 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F55F8420635808006456D1 /* LoginViewModel.m */; };
@@ -51,6 +55,8 @@
 		70C51A06597E1C66A825489C /* Pods_ZSTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZSTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		995B4520B0D6943615BF4A9E /* Pods-ZSTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZSTest/Pods-ZSTest.release.xcconfig"; sourceTree = "<group>"; };
 		BC97D4B69EED3E12B769D6A8 /* Pods-ZSTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZSTest/Pods-ZSTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E90626AA2068CF80000E1F9F /* HttpRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequestManager.h; sourceTree = "<group>"; };
+		E90626AB2068CF80000E1F9F /* HttpRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequestManager.m; sourceTree = "<group>"; };
 		E9335C9A1C8FCCE100B4F3D3 /* ZSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9335C9E1C8FCCE100B4F3D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E9335CA71C8FCCE100B4F3D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +79,6 @@
 		E952AD221F95BCC900D8B3BF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E952AD231F95BCC900D8B3BF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E952AD281F95BE3000D8B3BF /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
-		E952AD2A1F95BEB800D8B3BF /* TestData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
 		E95DE5E92066536B00D244DC /* VideoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewModel.h; sourceTree = "<group>"; };
 		E95DE5EA2066536B00D244DC /* VideoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewModel.m; sourceTree = "<group>"; };
 		E95DE5EC2066551300D244DC /* VideoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListModel.h; sourceTree = "<group>"; };
@@ -81,7 +86,12 @@
 		E95DE5EF2066552800D244DC /* VideoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewCell.h; sourceTree = "<group>"; };
 		E95DE5F02066552800D244DC /* VideoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewCell.m; sourceTree = "<group>"; };
 		E95DE5F12066552800D244DC /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
-		E9DD19932060AC2300135AFE /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		E9A02A122068E59500542E67 /* ZSCommonTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSCommonTools.h; sourceTree = "<group>"; };
+		E9A02A132068E59500542E67 /* ZSCommonTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSCommonTools.m; sourceTree = "<group>"; };
+		E9A02A152068E71D00542E67 /* VideoList2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VideoList2.json; sourceTree = "<group>"; };
+		E9A02A162068E71E00542E67 /* VideoList3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VideoList3.json; sourceTree = "<group>"; };
+		E9A02A172068E71E00542E67 /* VideoList1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VideoList1.json; sourceTree = "<group>"; };
+		E9A02A1B2068F5FC00542E67 /* VideoList0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VideoList0.json; sourceTree = "<group>"; };
 		E9F54C041D5AF3BE00EBD9A7 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E9F54C051D5AF3BE00EBD9A7 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E9F55F80206357EE006456D1 /* AccountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
@@ -258,7 +268,10 @@
 		E952AD271F95BE1A00D8B3BF /* Jsons */ = {
 			isa = PBXGroup;
 			children = (
-				E952AD2A1F95BEB800D8B3BF /* TestData.json */,
+				E9A02A172068E71E00542E67 /* VideoList1.json */,
+				E9A02A1B2068F5FC00542E67 /* VideoList0.json */,
+				E9A02A152068E71D00542E67 /* VideoList2.json */,
+				E9A02A162068E71E00542E67 /* VideoList3.json */,
 			);
 			path = Jsons;
 			sourceTree = "<group>";
@@ -266,6 +279,10 @@
 		E96CD6A31D8E547C0051BC19 /* CustomTools */ = {
 			isa = PBXGroup;
 			children = (
+				E90626AA2068CF80000E1F9F /* HttpRequestManager.h */,
+				E90626AB2068CF80000E1F9F /* HttpRequestManager.m */,
+				E9A02A122068E59500542E67 /* ZSCommonTools.h */,
+				E9A02A132068E59500542E67 /* ZSCommonTools.m */,
 			);
 			path = CustomTools;
 			sourceTree = "<group>";
@@ -285,7 +302,6 @@
 				E9335CE21C8FCF0400B4F3D3 /* TestViewController.xib */,
 				E9F54C041D5AF3BE00EBD9A7 /* MainViewController.h */,
 				E9F54C051D5AF3BE00EBD9A7 /* MainViewController.m */,
-				E9DD19932060AC2300135AFE /* MainViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -431,9 +447,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E952AD2B1F95BEB800D8B3BF /* TestData.json in Resources */,
-				E9DD19942060AC2300135AFE /* MainViewController.xib in Resources */,
+				E9A02A1C2068F5FC00542E67 /* VideoList0.json in Resources */,
+				E9A02A182068E71E00542E67 /* VideoList2.json in Resources */,
+				E9A02A192068E71E00542E67 /* VideoList3.json in Resources */,
 				E9335CAD1C8FCCE100B4F3D3 /* LaunchScreen.storyboard in Resources */,
+				E9A02A1A2068E71E00542E67 /* VideoList1.json in Resources */,
 				E952AD291F95BE3000D8B3BF /* image.xcassets in Resources */,
 				E9335CE41C8FCF0400B4F3D3 /* TestViewController.xib in Resources */,
 				E95DE5F32066552800D244DC /* VideoListTableViewCell.xib in Resources */,
@@ -510,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9A02A142068E59500542E67 /* ZSCommonTools.m in Sources */,
 				E9F54C061D5AF3BE00EBD9A7 /* MainViewController.m in Sources */,
 				E95DE5EB2066536B00D244DC /* VideoViewModel.m in Sources */,
 				E9335CDE1C8FCE9800B4F3D3 /* BaseViewController.m in Sources */,
@@ -521,6 +540,7 @@
 				E9F55F8520635808006456D1 /* LoginViewModel.m in Sources */,
 				E95DE5F22066552800D244DC /* VideoListTableViewCell.m in Sources */,
 				E95DE5EE2066551400D244DC /* VideoListModel.m in Sources */,
+				E90626AC2068CF80000E1F9F /* HttpRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

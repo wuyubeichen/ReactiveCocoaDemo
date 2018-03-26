@@ -24,6 +24,6 @@
 
 
 @interface VideoListDataModel : NSObject
-@property (nonatomic, copy) NSArray *archive;
+@property (nonatomic, copy) NSArray *videos;
 
 @end

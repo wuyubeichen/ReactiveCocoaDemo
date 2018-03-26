@@ -10,7 +10,8 @@
 
 @interface VideoViewModel : NSObject<UITableViewDelegate,UITableViewDataSource>
 
-
+//当前视图控制器
+@property (nonatomic, weak) UIViewController *currentVC;
 
 //RACCommand操作：
 //获取视频列表

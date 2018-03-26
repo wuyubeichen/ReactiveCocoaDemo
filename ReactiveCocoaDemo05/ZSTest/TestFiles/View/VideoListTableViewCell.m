@@ -8,6 +8,7 @@
 
 #import "VideoListTableViewCell.h"
 @interface VideoListTableViewCell()
+
 @property (weak, nonatomic) IBOutlet UIImageView *coverImgView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *upPersonLabel;
@@ -17,6 +18,10 @@
 
 @implementation VideoListTableViewCell
 #pragma mark - Life Cycle
++ (VideoListTableViewCell *)getVideoListTableViewCell{
+    VideoListTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"VideoListTableViewCell" owner:nil options:nil] lastObject];
+    return cell;
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

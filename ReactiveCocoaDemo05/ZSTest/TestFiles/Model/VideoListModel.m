@@ -30,7 +30,7 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     
-    return @{@"archive" : [VideoListModel class]};
+    return @{@"videos" : [VideoListModel class]};
 }
 
 @end

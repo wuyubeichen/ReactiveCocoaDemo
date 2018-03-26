@@ -21,7 +21,6 @@
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
 
-
 @end
 
 @implementation TestViewController
@@ -66,7 +65,6 @@
         [weakSelf.loginViewModel.loginCommand execute:nil];
     }];
 }
-
 
 
 

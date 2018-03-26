@@ -8,8 +8,6 @@
 
 #import "LoginViewModel.h"
 #import "MainViewController.h"
-const float delayInSeconds = 1.5f;
-
 @interface LoginViewModel()
 //有效信号属性
 @property (nonatomic,strong)RACSignal *validUserNameSignal;
@@ -67,22 +65,21 @@ const float delayInSeconds = 1.5f;
     //封装登录网络请求操作
     _loginCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            //使用延时操作，模拟登录网络请求,并在这里发送消息
             [self.hideFailureLabelSignal sendNext:@"1"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds)*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                NSDictionary *loginData;
-                if([weakSelf.accountModel.userName isEqualToString:@"username"] && [weakSelf.accountModel.password isEqualToString:@"password"]){
+            //登录网络请求
+            [HttpRequestManager loginInWithUsername:weakSelf.accountModel.userName password:weakSelf.accountModel.password response:^(BOOL success, id data) {
+                if (success) {
                     [self.hideFailureLabelSignal sendNext:@"1"];
-                    loginData= @{@"status":@"0",@"errorMsg":@"",@"name":@"FengZi",@"age":@"18"};
                 }else{
-                    loginData = @{@"status":@"1",@"errorMsg":@"用户名或者密码错误"};
                     [self.hideFailureLabelSignal sendNext:@"0"];
                 }
                 //发送登录请求的数据
-                [subscriber sendNext:loginData];
+                [subscriber sendNext:data];
                 //必须sendCompleted，否则命令永远处于执行状态
                 [subscriber sendCompleted];
-            });
+            }];
+            
+            
             return nil;
         }];
     }];
@@ -93,7 +90,7 @@ const float delayInSeconds = 1.5f;
         NSDictionary *loginData = (NSDictionary *)x;
         if ([loginData[@"status"] isEqualToString:@"0"]) {
             NSLog(@"登录成功！");
-            MainViewController *firstVC = [[MainViewController alloc] initWithNibName:@"FirstViewController" bundle:nil];
+            MainViewController *firstVC = [[MainViewController alloc] init];
             [weakSelf.currentVC.navigationController pushViewController:firstVC animated:YES];
         }else{
         }
