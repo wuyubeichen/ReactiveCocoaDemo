@@ -15,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"我的主页";
     self.view.backgroundColor = [UIColor orangeColor];
 }
 

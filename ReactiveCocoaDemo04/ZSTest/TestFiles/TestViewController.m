@@ -12,9 +12,7 @@
 @interface TestViewController ()
 
 @property (nonatomic, strong) UIView *customView;
-
 @property (nonatomic, strong) UIButton  *testBtn;
-
 @property (nonatomic, strong) UITextView *testTxtView;
 
 @end
@@ -25,7 +23,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.translucent = NO;
-    self.title = @"RACDemo06";
+    self.title = @"RACDemo04";
     
     //1.代替代理
     //[self signalTest1];

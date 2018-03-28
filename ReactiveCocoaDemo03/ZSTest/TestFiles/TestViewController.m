@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    self.title = @"RACDemo04";
+    self.title = @"RACDemo03";
     
     //======第一部分:理解信号
     //测试自定义信号,理解信号机制
@@ -47,7 +47,7 @@
     //[self studyRAC3];
     
     //4.RACMulticastConnection
-    [self studyRAC4];
+    //[self studyRAC4];
     
 
     
@@ -83,13 +83,13 @@
     //[self signalTest10];
     
     //11.信号节流：throttle
-    //[self signalTest11];
+    [self signalTest11];
     
     //12.信号关于线程的操作：deliverON、subscribeOn
     //[self signalTest12];
     
     //13.信号的重复订阅replay、ReplayLast、ReplayLazily
-    [self signalTest13];
+    //[self signalTest13];
 
  }
 
@@ -740,7 +740,7 @@
     //测试2：
     [[[RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         [subscriber sendNext:@"发送消息11"];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [subscriber sendNext:@"发送消息21"];
             [subscriber sendNext:@"发送消息22"];
         });
@@ -748,6 +748,7 @@
             [subscriber sendNext:@"发送消息31"];
             [subscriber sendNext:@"发送消息32"];
             [subscriber sendNext:@"发送消息32"];
+            [subscriber sendNext:@"发送消息33"];
         });
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [subscriber sendNext:@"发送消息41"];
@@ -755,8 +756,16 @@
             [subscriber sendNext:@"发送消息43"];
             [subscriber sendNext:@"发送消息44"];
         });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [subscriber sendNext:@"发送消息51"];
+            [subscriber sendNext:@"发送消息52"];
+            [subscriber sendNext:@"发送消息53"];
+            [subscriber sendNext:@"发送消息54"];
+            [subscriber sendNext:@"发送消息55"];
+        });
+
         return nil;
-    }] throttle:2] subscribeNext:^(id  _Nullable x) {
+    }] throttle:3] subscribeNext:^(id  _Nullable x) {
         NSLog(@"Next:%@",x);
     }];
 
