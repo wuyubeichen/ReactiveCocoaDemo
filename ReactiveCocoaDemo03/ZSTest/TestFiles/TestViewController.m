@@ -747,7 +747,6 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [subscriber sendNext:@"发送消息31"];
             [subscriber sendNext:@"发送消息32"];
-            [subscriber sendNext:@"发送消息32"];
             [subscriber sendNext:@"发送消息33"];
         });
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -756,16 +755,8 @@
             [subscriber sendNext:@"发送消息43"];
             [subscriber sendNext:@"发送消息44"];
         });
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [subscriber sendNext:@"发送消息51"];
-            [subscriber sendNext:@"发送消息52"];
-            [subscriber sendNext:@"发送消息53"];
-            [subscriber sendNext:@"发送消息54"];
-            [subscriber sendNext:@"发送消息55"];
-        });
-
         return nil;
-    }] throttle:3] subscribeNext:^(id  _Nullable x) {
+    }] throttle:2] subscribeNext:^(id  _Nullable x) {
         NSLog(@"Next:%@",x);
     }];
 
